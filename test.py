@@ -54,4 +54,4 @@ class TestNidTools(unittest.TestCase):
         mocked_check_output.return_value = sinfo_output
         self.assertTrue(nid_tools.get_state("nid10726") == "comp")
         self.assertTrue(nid_tools.get_state("nid00248") == "down*")
-        self.assertRaises(NonexistentNodeError,nid_tools.get_state,("nid99999",))
+        self.assertRaises(nid_tools.NonexistentNodeError,nid_tools.get_state,("nid99999",))
